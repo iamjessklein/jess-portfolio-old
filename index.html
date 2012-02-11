@@ -6,21 +6,35 @@
 		p{font: 50px/68px 'BebasRegular', Arial, sans-serif;letter-spacing: 0;}
 		#fill{font: 15px 'DanielBlackRegular', Arial, sans-serif;}
 </style>
-<div id ="container">
+<div id ="container" style="display: none">
 	<p id="fill-in"> <span id= "name"> Jess Klein</span><span id="is"> is a </span><input id="fill" type ="text" autocomplete="off" placeholder="fill in the blank"/> <span id ="designer"> Designer</span></p>
 </div>
-<section class="project lovey cute">
-  <img src="http://lovebomb.me/images/lovebomb-person.svg">
-  <p><a href="http://lovebomb.me/">lovebomb.me</a> is cool. Jess <a href="http://jessicaklein.blogspot.com/2012/01/on-inspiration-and-lovebombs.html">blogged</a> about it.</p>
-</section>
-<section class="project cute">
-  <img src="http://hackasaurus.org/images/goggles/supergirl.png">
-</section>
-<section class="project hardcore">
-  <h1>lol jess is not hardcore.</h1>
-</section>
+<div id="projects"></div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
+jQuery.ajax({
+  type: 'GET',
+  url: "http://etherpad-export.appspot.com/",
+  data: {
+    server: "etherpad.mozilla.org",
+    port: "80",
+    pad: "jess-portfolio-html",
+    format: "txt"
+  },
+  dataType: "text",
+  crossDomain: true,
+  success: function(data) {
+    $("#projects").html(data);
+  },
+  error: function(jqXHR, status) {
+    $("#projects").text("ERROR: " + status + " " + jqXHR.status +
+                        " " + jqXHR.responseText);
+  },
+  complete: function() {
+    $("#container").fadeIn();
+  }
+});
+
 $("input").keyup(function() {
   var query = $("input").val();
   $("section").hide();
