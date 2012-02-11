@@ -31,6 +31,16 @@ body {
 
 }
 
+section#fail {
+  padding-top: 100px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: gray;
+}
+
+section#fail a {
+  color: inherit;
+}
 
 section.project {
   display: none;
