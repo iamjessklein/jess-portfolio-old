@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Jessica Klein is a ___________ Designer </title>
+<title>Jessica Klein is a Designer</title>
 <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
 <style type="text/css" media="screen">
 		p{font: 50px/68px 'BebasRegular', Arial, sans-serif;letter-spacing: 0;}
@@ -55,6 +55,7 @@ $("input").bind("keyup change", function() {
       if (matches.length) {
         matches.fadeIn();
         window.location.hash = "#" + query;
+        document.title = "Jessica Klein is a " + query + " Designer";
       }
     }
   }
