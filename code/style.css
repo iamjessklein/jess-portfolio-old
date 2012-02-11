@@ -1,0 +1,91 @@
+body {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('BEBAS___-webfont.eot');
+    src: url('BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BEBAS___-webfont.woff') format('woff'),
+         url('BEBAS___-webfont.ttf') format('truetype'),
+         url('BEBAS___-webfont.svg#BebasRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#container{
+
+	min-height: 10em;
+    display: table-cell;
+    vertical-align: middle 
+    
+}
+
+
+#fill-in{
+	padding:10px;
+	margin:0px;
+	margin-top: 200px;
+
+}
+
+#construction {
+	font-family: 'HelveticaNeue-UltraLight','Helvetica Neue UltraLight','Helvetica Neue',Arial,Helvetica,sans-serif;
+	color:#666666;
+	font-size:14px;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+
+}
+
+#name {
+	color: #CC3399;
+}
+
+#is {
+	color:#FF3333;
+}
+
+#designer{
+	color:#FF6633;
+}
+
+
+#success{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:200px;
+	color:#FF6633;
+	font-size: 30px;
+
+}
+
+input{
+	font-family:'Comic Sans','Comic Sans MS', 'cursive' 	
+	border:1px solid pink;
+	width: 230px;
+	height:15px;
+	font-size:15px;
+	padding-left:1px;
+	padding-top:26px;
+	margin-bottom:0px;
+}
+
+button{
+	background-color:purple;
+	border:0px;
+	padding:25px;
+	color:white;
+	font-size: 20px;
+	text-decoration:none;
+	margin-left:225px;
+	margin-top:50px;
+
+}

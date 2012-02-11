@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Jessica Klein is a ___________ Designer </title>
+<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+<style type="text/css" media="screen">
+		p{font: 50px/68px 'BebasRegular', Arial, sans-serif;letter-spacing: 0;}
+</style>
+<div id ="container">
+	<p id="fill-in"> <span id= "name"> Jess Klein</span><span id="is"> is a </span> <input type ="text" autocomplete="off"/> <span id ="designer"> Designer</span></p>
+		<p id="construction">Hello. I’m redoing my website. In the meantime, please help me with this little user test.</p>
+		<button style="display: none;">Submit My Suggestion!</button>
+</div>
+		<p id="success" style="display: none;">Thanks for helping me out.</br> Check out my <a href="http://jessicaklein.blogspot.com/">blog</a> for updates on my work.</p>
+		<p id="error" style="display: none;">O snap, an error occurred.</p>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>
+function submitSuggestion(word, cb) {
+ jQuery.ajax({
+       type: 'POST',
+       url: "http://hackpub.hackasaurus.org/buckets/jess-submissiony-thingys/publish",
+       data: {
+         'html': word,
+         'original-url': word
+       },
+       crossDomain: true,
+       dataType: 'json',
+       success: function(data) {
+         console.log("yay", data['published-url']);
+         cb(true);
+       },
+       error: function() {
+         cb(false);
+       }
+     });
+}
+
+$("button").click(function() {
+  $("#container").fadeOut(function() {
+    submitSuggestion($("input").val(), function(success) {
+      if (success) {
+        $("#success").fadeIn();
+      } else {
+        $("#error").fadeIn();
+      }
+    });
+  });
+});
+
+$("input").keyup(function() {
+  $("#construction").fadeOut(function() {
+    $("button").fadeIn();
+  });
+});
+</script>
