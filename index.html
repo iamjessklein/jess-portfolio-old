@@ -10,8 +10,43 @@
 	<p id="fill-in"> <span id= "name"> Jess Klein</span><span id="is"> is a </span><input id="fill" type ="text" autocomplete="off" placeholder="fill in the blank"/> <span id ="designer"> Designer</span></p>
 </div>
 <div id="projects"></div>
+<section id="fail" style="display: none">
+  Jessica Klein is not currently a <span class="query"></span> designer. If you think she should be, <a href="javascript:suggest()">click here</a>.
+</section>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
+function submitSuggestion(word, cb) {
+ jQuery.ajax({
+       type: 'POST',
+       url: "http://hackpub.hackasaurus.org/buckets/jess-submissiony-thingys/publish",
+       data: {
+         'html': word,
+         'original-url': word
+       },
+       crossDomain: true,
+       dataType: 'json',
+       success: function(data) {
+         console.log("yay", data['published-url']);
+         cb(true);
+       },
+       error: function() {
+         cb(false);
+       }
+     });
+}
+
+function suggest() {
+  var word = $("section#fail .query").text();
+  $("section#fail").fadeOut();
+  submitSuggestion(word, function(success) {
+    if (success) {
+      alert("Thanks for the suggestion, I'm on it!");
+    } else {
+      alert("Oops, an error occurred.");
+    }
+  });
+}
+
 jQuery.ajax({
   type: 'GET',
   url: "http://etherpad-export.appspot.com/",
@@ -56,6 +91,9 @@ $("input").bind("keyup change", function() {
         matches.fadeIn();
         window.location.hash = "#" + query;
         document.title = "Jessica Klein is a " + query + " Designer";
+      } else {
+        $("section#fail .query").text(query);
+        $("section#fail").show();
       }
     }
   }
