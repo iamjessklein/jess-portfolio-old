@@ -32,18 +32,30 @@ jQuery.ajax({
   },
   complete: function() {
     $("#container").fadeIn();
+    onhashchange();
   }
 });
 
+onhashchange = function() {
+  var hash = window.location.hash.slice(1);
+  var oldInput = $("input").val();
+  if (hash.length && hash != oldInput)
+    $("input").val(hash).trigger("change");
+};
+
 var lastQuery;
 
-$("input").keyup(function() {
+$("input").bind("keyup change", function() {
   var query = $("input").val();
   if (query != lastQuery) {
     lastQuery = query;
     $("section").hide();
     if (query.length) {
-      $("section." + query).fadeIn();
+      var matches = $("section." + query);
+      if (matches.length) {
+        matches.fadeIn();
+        window.location.hash = "#" + query;
+      }
     }
   }
 });
