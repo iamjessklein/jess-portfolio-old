@@ -18,6 +18,22 @@ body {
 
 }
 
+
+@font-face {
+    font-family: 'DanielBlackRegular';
+    src: url('danielbk-webfont.eot');
+    src: url('danielbk-webfont.eot?#iefix') format('embedded-opentype'),
+         url('danielbk-webfont.woff') format('woff'),
+         url('danielbk-webfont.ttf') format('truetype'),
+         url('danielbk-webfont.svg#DanielBlackRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
 #container{
 
 	min-height: 10em;
@@ -68,14 +84,15 @@ body {
 }
 
 input{
+    vertical-align: bottom;
+    text-align: center;
 	font-family:'Comic Sans','Comic Sans MS', 'cursive' 	
 	border:1px solid pink;
 	width: 230px;
-	height:15px;
-	font-size:15px;
+	height:30px;
 	padding-left:1px;
-	padding-top:26px;
-	margin-bottom:0px;
+	padding-top:10px;
+	margin-bottom:5px;
 }
 
 button{
