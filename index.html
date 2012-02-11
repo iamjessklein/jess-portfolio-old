@@ -8,48 +8,24 @@
 </style>
 <div id ="container">
 	<p id="fill-in"> <span id= "name"> Jess Klein</span><span id="is"> is a </span><input id="fill" type ="text" autocomplete="off" placeholder="fill in the blank"/> <span id ="designer"> Designer</span></p>
-		<p id="construction">Hello. I’m redoing my website. In the meantime, please help me with this little user test.</p>
-		<button style="display: none;">Submit My Suggestion!</button>
 </div>
-		<p id="success" style="display: none;">Thanks for helping me out.</br> Check out my <a href="http://jessicaklein.blogspot.com/">blog</a> for updates on my work.</p>
-		<p id="error" style="display: none;">O snap, an error occurred.</p>
+<section class="project lovey cute">
+  <img src="http://lovebomb.me/images/lovebomb-person.svg">
+  <p><a href="http://lovebomb.me/">lovebomb.me</a> is cool. Jess <a href="http://jessicaklein.blogspot.com/2012/01/on-inspiration-and-lovebombs.html">blogged</a> about it.</p>
+</section>
+<section class="project cute">
+  <img src="http://hackasaurus.org/images/goggles/supergirl.png">
+</section>
+<section class="project hardcore">
+  <h1>lol jess is not hardcore.</h1>
+</section>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
-function submitSuggestion(word, cb) {
- jQuery.ajax({
-       type: 'POST',
-       url: "http://hackpub.hackasaurus.org/buckets/jess-submissiony-thingys/publish",
-       data: {
-         'html': word,
-         'original-url': word
-       },
-       crossDomain: true,
-       dataType: 'json',
-       success: function(data) {
-         console.log("yay", data['published-url']);
-         cb(true);
-       },
-       error: function() {
-         cb(false);
-       }
-     });
-}
-
-$("button").click(function() {
-  $("#container").fadeOut(function() {
-    submitSuggestion($("input").val(), function(success) {
-      if (success) {
-        $("#success").fadeIn();
-      } else {
-        $("#error").fadeIn();
-      }
-    });
-  });
-});
-
 $("input").keyup(function() {
-  $("#construction").fadeOut(function() {
-    $("button").fadeIn();
-  });
+  var query = $("input").val();
+  $("section").hide();
+  if (query.length) {
+    $("section." + query).fadeIn();
+  }
 });
 </script>
