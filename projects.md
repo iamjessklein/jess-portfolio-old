@@ -8,4 +8,14 @@
 |Open Badges | |
 |Open Design Kit | |
 |p5||
+|Lovebomb||
+|Privicons||
+|Hack Firefox Snippet | |
+|Privacy Day||
+|Sesame Street English||
+|Clinic Efficiency Dashboard||
+|Bocoup||
+|Mobile Design Teaching Kit||
+|Net Neutrality Hackable Comic||
+
 
