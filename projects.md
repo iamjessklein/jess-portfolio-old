@@ -1,4 +1,4 @@
-| :Project      | :Description  |: Year |
+| Project       | Description   | Year |
 | ------------- |:-------------:| -----:|
 | Hackasaurus   |               |       |
 |               |               |       |
