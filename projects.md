@@ -1,6 +1,7 @@
 | Project       | Description   | Year |
 | ------------- |:-------------:| -----:|
-| Hackasaurus   |    test           |  2010     |
+| [PomBot](https://pombot.bocoup.com/)|A Slack bot for time management|2016|
+|Hackasaurus   |    test           |  2010     |
 | The Hive      |           test    |    2010   |
 | Rockaway Help |                   |       |
 | Aid Badges| | |
