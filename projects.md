@@ -1,5 +1,5 @@
-| Project       | Description   | Year |
-| ------------- |:-------------:| -----:|
+| Project       | Description   | Year | Tags|
+| ------------- |:-------------:|:-----:|-------:|
 | [PomBot](https://pombot.bocoup.com/)|A Slack bot for time management|2016|
 |Hackasaurus   |    test           |  2010     |
 | The Hive      |           test    |    2010   |
